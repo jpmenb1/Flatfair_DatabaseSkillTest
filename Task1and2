@@ -1,0 +1,47 @@
+Task 1
+
+/*For simplicity, I have given the values 50 and 10 for Commission Percentage and Sales, respectively*/
+
+Create Table Commission1 (
+Commission_percent numeric(10,5),
+Sales numeric(10,5),
+Id_agent numeric(10,5),
+Commission_paid numeric(10,5)
+);
+
+Select Commission_percent, Sales, Id_agent
+From Commission1
+
+Insert into Commission1 (Commission_percent, Sales, Id_agent)
+Values (50, 10, 10);
+Insert into Commission1 (Commission_percent, Sales, Id_agent)
+Values (50, 10, 5);
+Insert into Commission1 (Commission_percent, Sales, Id_agent)
+Values (50, 10, 2);
+Insert into Commission1 (Commission_percent, Sales, Id_agent)
+Values (50, 10, 1);
+Insert into Commission1 (Commission_percent, Sales, Id_agent)
+Values (50, 10, 0);
+
+Select Commission_percent, 
+       Sales, 
+	   Id_agent,
+       (Commission_percent * Sales + Id_agent) as 'Commission_paid'
+From Commission1;
+
+Select (sum(Commission_percent * Sales + Id_agent)) as Total_Commission_Paid
+From Commission1
+
+
+Task 2
+
+The new table design I propose has the following columns: Commission Percentage; Sales; ID Agent; and Commission Paid.
+
+Commission Paid is given by Commission_percent * Sales + Id_agent.
+
+Create Table Commission1 (
+Commission_percent numeric(10,5),
+Sales numeric(10,5),
+Id_agent numeric(10,5),
+Commission_paid numeric(10,5)
+);
